@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        class Temperature {            
+            constructor (C){
+            this.C = C;
+        }
+        getDoK() {
+            return this.C+273;
+        }
+        getDoF() {
+            return (9/5 *this.C + 32 );
+        }
+    }
+    let a = prompt('')
+        let tinh_do = new Temperature(a);
+        let doK = tinh_do.getDoK();
+        let doF = tinh_do.getDoF();
+        alert(doF + " " + doK)
+    </script>
+</body>
+</html>

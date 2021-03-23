@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let checkdt =0;
+     class Mobie {
+         constructor (batterry,soan_thao,hop_thu_den,tin_da_gui) {
+             this.batterry = batterry;
+             this.soan_tin = soan_thao;
+             this.hop_thoai = hop_thu_den;
+             this.tin_da_gui = tin_da_gui;
+         };
+         
+        
+         getOff() {
+             
+             if(checkdt ==0) {
+                 alert("ĐT đang tắt");
+             }
+         };
+         getOn() {
+             let checkdt = 1;
+             if(checkdt==1) {
+                 alert("ĐT đang bật");
+             }
+         };
+         getcheckOnOff() {
+            if(this.batterry >0 && this.batterry <101) {
+                  return true;
+              }if (this.batterry<45){
+                  alert('pin yếu');
+              } else{
+                  return false;
+              }
+         };
+         getcharge() {
+             alert('ĐT đang sạc ' + this.batterry++);
+         };
+         getmassage() {
+             alert(prompt("soạn tin đê: ") +this.batterry--);
+         };
+         getreceive_news() {
+             alert("Tin nhắn đến: "+ this.batterry--);
+         };
+         getto_send() {
+             alert("gửi zề:"+ this.batterry--);
+         };
+         getwatch_news_sent() {
+             alert('Xem tin đã gửi: '+ this.batterry--);
+         };
+         getwatch_news_to() {
+             alert('Xem tin đến: '+ this.batterry--);
+         }
+        
+        };
+        
+    
+     let mobie = new Mobie(50,0,0,0);
+     function a() {
+     let checkOnOff = mobie.getcheckOnOff();}
+     function b() {
+     let Off = mobie.getOff();}
+     function c() {
+     let On = mobie.getOn();}
+     function d() {
+     let charge = mobie.getcharge();}
+     function e() {
+     let massage = mobie.getmassage();}
+     function f() {
+     let receive_news = mobie.getreceive_news();}
+     function g() {
+     let to_send = mobie.getto_send();}
+     function h() {
+     let watch_news_sent = mobie.getwatch_news_sent();}
+     function j() {
+     let watch_news_to = mobie.getwatch_news_to();}
+
+    </script>
+</body>
+<button type="button" onclick="a()">Check</button>
+    <button type="button" onclick="b()">Bật</button>
+    <button type="button" onclick="c()">Tắt</button>
+    <button type="button" onclick="d()">Sạc pin</button>
+    <button type="button" onclick="e()">Soạn tin</button>
+    <button type="button" onclick="f()">Nhận tin</button>
+    <button type="button" onclick="g()">Gửi tin</button>
+    <button type="button" onclick="h()">Xem tin gửi</button>
+    <button type="button" onclick="j()">Xem tin đến</button>
+    
+</html>
