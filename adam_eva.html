@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>adam eva</title>
+</head>
+<body>
+    <script>
+        class Apple{
+            constructor (weight) {
+                this.status = true;
+                this.weight = weight;                
+            }
+        }       
+        class Human {
+            constructor (name,gender,weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+            speak(str) {
+                return( this.name + " " +"is me");
+            }
+            eat(apple_Germany) {
+                if(apple_Germany.status) {                    
+                    this.weight +=1;
+                    c -=1;
+                    return(this.name+ " eat a apple "+this.name +" Weight "+  this.weight +"  weight apple " + c)
+                }
+            }
+        }
+        let apple_Germany= new Apple(10);
+        let c = apple_Germany.weight;
+        let adam1 = new Human('Adam','male',50);
+        let eva = new Human('Eva','Female',45)
+        let a = adam1.eat(apple_Germany);
+        let d= eva.eat(apple_Germany); 
+        document.write(a +'<br>')
+        document.write(d+'<br>')
+
+        // for(let i =0; i<5;i++) {
+        //     document.write(a +'<br>')
+        // document.write(d+'<br>')
+        // }    
+        
+       
+       
+    </script>
+</body>
+</html>

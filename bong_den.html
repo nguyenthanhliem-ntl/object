@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="1" src="tat.jpg" style="width: 250px;height: 250px;" alt=" "></img><br>
+<button onclick="den(switchBtn, lamp)">switch on </button>
+<button onclick="den(switchBtn, lamp)" >switch off </button>
+    <script>
+        class Lamp {
+            constructor () {
+                this.status = false;
+                this.img = '';
+
+            }
+            LampOn() {
+                this.status = true;
+            }
+            LampOff() {
+                this.status = false;
+            }
+            checkLamp(){
+                return this.status;
+            }
+        }
+        class Switch {
+            constructor(Lamp) {
+                this.status = false; 
+                this.lamp = Lamp;               
+            }
+            connectToLamp(lamp) {
+                this.lamp = lamp;                
+            }            
+            SwitchOn() {
+                this.status = true;
+                this.lamp.LampOn();
+            }
+            SwitchOff() {
+                this.status  = false;
+                this.lamp.LampOff();
+            }
+            SwitchButton() {
+                if (this.status){
+                    this.SwitchOff();
+                }else {
+                    this.SwitchOn();
+                }
+            }
+        }
+       
+            let light = document.getElementById('1');
+            let imgOn = 'bat.jpg';
+            let imgOff = 'tat.jpg';
+
+            let lamp = new Lamp();
+            let switchBtn = new Switch();
+
+
+            function den(btn, lamp) {
+                btn.connectToLamp(lamp);
+                btn.SwitchButton();
+                // if(lamp.checkStatus()){
+                //     lamp.img = imgOn
+                // }else {
+                //     lamp.img = imgOff;
+                // }
+                lamp.img = lamp.checkLamp() ? imgOn : imgOff;
+                light.src = lamp.img;
+            }
+                
+    
+    </script>
+</body>
+</html>
